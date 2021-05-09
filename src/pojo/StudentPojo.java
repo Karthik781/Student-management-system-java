@@ -8,9 +8,18 @@ public class StudentPojo {
 	private String contact;
 	private static int prevStudentId = 0;
 	
+	//Constructor for new student objects
 	public StudentPojo(String studentName, int studentScore, String contact) {
 		super();
 		studentId = ++prevStudentId;
+		this.studentName = studentName;
+		this.studentScore = studentScore;
+		this.contact = contact;
+	}
+	//Constructor for update student objects
+	public StudentPojo(int  studentId, String studentName, int studentScore, String contact) {
+		super();
+		this.studentId = studentId;
 		this.studentName = studentName;
 		this.studentScore = studentScore;
 		this.contact = contact;

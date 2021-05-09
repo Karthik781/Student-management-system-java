@@ -40,12 +40,24 @@ public class StudentDao {
 	}
 	
 	public StudentPojo updateStudent(StudentPojo updatedStudent) {
-		for(StudentPojo student: allStudents) {
-			if(student.getStudentId() == updatedStudent.getStudentId()) {
-				allStudents.set(allStudents.indexOf(student), updatedStudent);
+		for(int i = 0; i < allStudents.size(); i++ ) {
+			if(allStudents.get(i).getStudentId() == updatedStudent.getStudentId()) {
+				allStudents.set(i, updatedStudent);
+				return updatedStudent;
 			}
 		}
-		return updatedStudent;
+			
+		return null;
+	}
+	
+	public StudentPojo getObjectById(int studentId) {
+		
+		for(StudentPojo student: allStudents) {
+			if(student.getStudentId() == studentId) {
+				return student;
+			}
+		}
+		return null;
 	}
 		
 	
