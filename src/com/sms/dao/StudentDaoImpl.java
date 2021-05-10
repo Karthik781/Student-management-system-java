@@ -1,13 +1,16 @@
-package pojo;
+package com.sms.dao;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentDao {
+import com.sms.pojo.StudentPojo;
+
+public class StudentDaoImpl implements StudentDao{
 	
 	List<StudentPojo> allStudents;
 	
-	public StudentDao(){
+	public StudentDaoImpl(){
 		allStudents = new ArrayList<StudentPojo>();
 		
 		StudentPojo s1 = new StudentPojo("mike", 20, "78337434738");
@@ -50,7 +53,7 @@ public class StudentDao {
 		return null;
 	}
 	
-	public StudentPojo getObjectById(int studentId) {
+	public StudentPojo getStudentById(int studentId) {
 		
 		for(StudentPojo student: allStudents) {
 			if(student.getStudentId() == studentId) {

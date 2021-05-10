@@ -1,4 +1,4 @@
-package pojo;
+package com.sms.pojo;
 
 public class StudentPojo {
 	
